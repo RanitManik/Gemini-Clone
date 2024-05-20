@@ -1,0 +1,130 @@
+.sidebar {
+    min-height: 100vh;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f0f4f9;
+    padding: 25px 15px;
+    transition: width 0.15s ease, padding 0.3s ease;
+}
+
+.sidebar.extended {
+    width: 250px;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar img {
+    width: 20px;
+}
+
+.menu {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    border-radius: 100vh;
+}
+
+.menu:hover {
+    background-color: #e8eaed;
+}
+
+.top, .bottom {
+    display: grid;
+    gap: 0.5rem;
+    align-content: start;
+    align-items: center;
+}
+
+.sidebar .new-chat {
+    margin-top: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #e6eaf1;
+    border-radius: 50px;
+    font-size: 14px;
+    color: grey;
+    cursor: pointer;
+}
+
+.new-chat {
+    justify-content: center;
+    width: max-content;
+}
+
+.sidebar .recent-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.sidebar .recent-entry {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 100vh;
+    color: #282828;
+    cursor: pointer;
+}
+
+.sidebar .recent-entry:hover {
+    background-color: #e2e6eb;
+}
+
+.fade {
+    transition: opacity 1s ease;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.none {
+    display: none;
+    opacity: 0;
+    animation: fadeOut 1s forwards;
+}
+
+.block {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    white-space: nowrap;
+}
+
+.centered {
+    display: grid;
+    align-items: center;
+    justify-content: start;
+}
