@@ -84,14 +84,20 @@ You can start interacting with the Gemini model through the chat interface provi
 We welcome contributions to enhance the Gemini Clone project. To contribute:
 
 1. Fork the repository.
-2. Make your changes and commit them with clear and descriptive messages.
-3. Push your changes to your fork:
+2. Create a new branch for your feature or bug fix:
+
+   ```bash
+   git checkout -b feature-name
+   ```
+
+3. Make your changes and commit them with clear and descriptive messages.
+4. Push your changes to your fork:
 
    ```bash
    git push origin feature-name
    ```
 
-4. Create a pull request to the main repository, detailing the changes and enhancements you have made.
+5. Create a pull request to the main repository, detailing the changes and enhancements you have made.
 
 ---
 
