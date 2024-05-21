@@ -1,18 +1,32 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 body {
     overflow: hidden;
 }
 
 .main {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     max-height: 100svh;
-    /*padding-bottom: 15vh;*/
     position: relative;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .main .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     font-size: 22px;
     padding: 20px;
@@ -45,7 +59,9 @@ body {
 }
 
 .main .cards {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     padding: 20px;
@@ -93,12 +109,19 @@ body {
     padding: 10px 20px 0 20px;
     margin: auto;
     background-color: white;
+    -webkit-box-shadow: #ffffff 0 -20px 50px;
     box-shadow: #ffffff 0 -20px 50px;
 }
 
 .search-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     gap: 20px;
     background-color: #f0f4f9;
@@ -111,17 +134,29 @@ body {
     cursor: pointer;
 }
 
-.search-box input {
+.search-box textarea {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     background: transparent;
     border: none;
     outline: none;
     padding-inline: 8px;
     font-size: 18px;
+    padding: 0.85rem;
+    resize: none;
+}
+
+.search-box textarea::-webkit-scrollbar {
+    display: none;
 }
 
 .search-box div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 10px;
 }
@@ -144,6 +179,7 @@ body {
     outline: none;
     border-radius: 100vh;
     cursor: pointer;
+    display: -ms-grid;
     display: grid;
     place-items: center;
 }
@@ -164,9 +200,17 @@ body {
 
 .result-title {
     margin: 40px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 20px;
+}
+
+.result-title p {
+    word-break: break-all;
 }
 
 .result img {
@@ -175,14 +219,23 @@ body {
 }
 
 .result-data {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: start;
     gap: 20px;
 }
 
 .loader {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 10px;
 }
@@ -190,10 +243,23 @@ body {
 .loader hr {
     border-radius: 4px;
     border: none;
+    background: #f6f7f8 -webkit-gradient(linear, left top, right top, from(#9ed7ff), color-stop(#ffffff), to(#9ed7ff));
+    background: #f6f7f8 -o-linear-gradient(left, #9ed7ff, #ffffff, #9ed7ff);
     background: #f6f7f8 linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
     background-size: 800px 50px;
     height: 20px;
+    -webkit-animation: loader 3s infinite linear;
     animation: loader 3s infinite linear;
+}
+
+
+@-webkit-keyframes loader {
+    0% {
+        background-position: -800px 0;
+    }
+    100% {
+        background-position: 800px 0;
+    }
 }
 
 
@@ -215,21 +281,32 @@ body {
 
 
 @media (max-width: 600px) {
-    .main-bottom input {
-        flex: none;
-        width: 150px;
+
+    .search-box {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: start;
+        border-radius: 15px;
+        padding: 10px 20px;
+        gap: 10px;
+    }
+
+    .search-box textarea {
+        width: 100%;
+        padding: 15px 10px;
     }
 
     .main-bottom img {
         width: 20px;
     }
 
-    .search-box {
-        padding: 5px 10px;
-    }
-
     .search-box div {
         gap: 5px;
+        margin-left: auto;
     }
 
     .greet {

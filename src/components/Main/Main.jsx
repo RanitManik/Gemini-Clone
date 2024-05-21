@@ -71,7 +71,7 @@ const Main = () => {
                 }
                 <div className="main-bottom">
                     <div className="search-box">
-                        <input onChange={(e) => setInput(e.target.value)}
+                        <textarea rows="1" onChange={(e) => setInput(e.target.value)}
                                onKeyUp={(e) => {
                                    if (e.key === 'Enter') {
                                        onSent();

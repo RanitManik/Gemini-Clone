@@ -1,10 +1,26 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .sidebar {
     min-height: 100svh;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     background-color: #f0f4f9;
     padding: 25px 15px;
+    -webkit-transition: width 0.15s ease, padding 0.3s ease;
+    -o-transition: width 0.15s ease, padding 0.3s ease;
     transition: width 0.15s ease, padding 0.3s ease;
     z-index: 999;
 }
@@ -24,6 +40,7 @@
 .menu {
     width: 50px;
     height: 50px;
+    display: -ms-grid;
     display: grid;
     place-items: center;
     cursor: pointer;
@@ -35,15 +52,23 @@
 }
 
 .top, .bottom {
+    display: -ms-grid;
     display: grid;
     gap: 0.5rem;
+    -ms-flex-line-pack: start;
     align-content: start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 .sidebar .new-chat {
     margin-top: 50px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 10px;
     padding: 10px 15px;
@@ -55,7 +80,11 @@
 }
 
 .new-chat {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
 }
 
@@ -65,8 +94,14 @@
 }
 
 .sidebar .recent-entry {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: start;
     gap: 10px;
     padding: 10px;
@@ -80,6 +115,8 @@
 }
 
 .fade {
+    -webkit-transition: opacity 1s ease;
+    -o-transition: opacity 1s ease;
     transition: opacity 1s ease;
 }
 
@@ -93,12 +130,30 @@
     visibility: visible;
 }
 
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
     to {
         opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
 
@@ -114,19 +169,26 @@
 .none {
     display: none;
     opacity: 0;
+    -webkit-animation: fadeOut 1s forwards;
     animation: fadeOut 1s forwards;
 }
 
 .block {
     display: block;
     opacity: 0;
+    -webkit-animation: fadeIn 1s forwards;
     animation: fadeIn 1s forwards;
     white-space: nowrap;
 }
 
 .centered {
+    display: -ms-grid;
     display: grid;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: start;
 }
 
