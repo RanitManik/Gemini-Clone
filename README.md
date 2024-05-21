@@ -12,7 +12,6 @@ Gemini Clone is a React-based project designed to replicate the functionality of
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -65,7 +64,8 @@ Gemini Clone is a web application built using React that emulates the Google Gem
 
 ## Usage
 
-After installation, open your browser and navigate to `http://localhost:3000` to access the Gemini Clone application. You can start interacting with the Gemini model through the chat interface provided.
+After installation, open your browser and navigate to `http://localhost:5173/` to access the Gemini Clone application.
+You can start interacting with the Gemini model through the chat interface provided.
 
 ## Contributing
 
