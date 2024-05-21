@@ -22,19 +22,22 @@ const Main = () => {
                             <p>How can I help you today?</p>
                         </div>
                         <div className="cards">
-                            <div className="card">
+                            <div className="card"
+                                 onClick={() => setInput("Suggest beautiful places to see on an upcoming road trip")}>
                                 <p>Suggest beautiful places to see on an upcoming road trip</p>
                                 <img src={assets.compass_icon} alt=""/>
                             </div>
-                            <div className="card">
+                            <div className="card"
+                                 onClick={() => setInput("Briefly summarize this concept: urban planning")}>
                                 <p>Briefly summarize this concept: urban planning</p>
                                 <img src={assets.bulb_icon} alt=""/>
                             </div>
-                            <div className="card">
+                            <div className="card"
+                                 onClick={() => setInput("Brainstorm team bonding activities for our work retreat")}>
                                 <p>Brainstorm team bonding activities for our work retreat</p>
                                 <img src={assets.message_icon} alt=""/>
                             </div>
-                            <div className="card">
+                            <div className="card" onClick={() => setInput("Tell me about React js and React native")}>
                                 <p>Tell me about React js and React native</p>
                                 <img src={assets.code_icon} alt=""/>
                             </div>
@@ -64,7 +67,13 @@ const Main = () => {
                     <div className="search-box">
                         <input onChange={(e) => {
                             setInput(e.target.value)
-                        }} value={input} type="text" placeholder="Enter a prompt here"/>
+                        }} onKeyUp={
+                            (e) => {
+                                if (e.key === 'Enter') {
+                                    onSent();
+                                }
+                            }
+                        } value={input} type="text" placeholder="Enter a prompt here"/>
                         <div className="icon-container">
                             <button><img src={assets.gallery_icon} alt=""/></button>
                             <button><img src={assets.mic_icon} alt=""/></button>

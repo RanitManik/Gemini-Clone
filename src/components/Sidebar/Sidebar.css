@@ -1,11 +1,12 @@
 .sidebar {
-    min-height: 100vh;
+    min-height: 100svh;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #f0f4f9;
     padding: 25px 15px;
     transition: width 0.15s ease, padding 0.3s ease;
+    z-index: 999;
 }
 
 .sidebar.extended {
@@ -26,7 +27,7 @@
     display: grid;
     place-items: center;
     cursor: pointer;
-    border-radius: 100vh;
+    border-radius: 100svh;
 }
 
 .menu:hover {
@@ -49,7 +50,7 @@
     background-color: #e6eaf1;
     border-radius: 50px;
     font-size: 14px;
-    color: grey;
+    color: #505050;
     cursor: pointer;
 }
 
@@ -127,4 +128,9 @@
     display: grid;
     align-items: center;
     justify-content: start;
+}
+
+.recent {
+    max-height: 300px;
+    overflow-y: auto;
 }

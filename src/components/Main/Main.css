@@ -1,8 +1,13 @@
+body {
+    overflow: hidden;
+}
+
 .main {
     flex: 1;
-    min-height: 100vh;
+    max-height: 100svh;
     /*padding-bottom: 15vh;*/
     position: relative;
+    overflow: auto;
 }
 
 .main .nav {
@@ -26,7 +31,7 @@
 }
 
 .main .greet {
-    margin: 50px 0;
+    /*margin: 50px 0;*/
     font-size: 56px;
     color: #c4c7c5;
     font-weight: 500;
@@ -41,13 +46,20 @@
 
 .main .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     padding: 20px;
+    overflow-x: auto;
+    margin-bottom: 10rem;
+}
+
+.cards::-webkit-scrollbar {
+    display: none;
 }
 
 .main .card {
     height: 200px;
+    min-width: 200px;
     padding: 15px;
     background-color: #f0f4f9;
     border-radius: 10px;
@@ -75,12 +87,13 @@
 }
 
 .main-bottom {
-    position: absolute;
+    position: fixed;
+    width: min(900px, 100%);
     bottom: 0;
-    width: 100%;
-    max-width: 900px;
-    padding: 0px 20px;
+    padding: 10px 20px 0 20px;
     margin: auto;
+    background-color: white;
+    box-shadow: #ffffff 0 -20px 50px;
 }
 
 .search-box {
@@ -140,7 +153,7 @@
 }
 
 .result {
-    padding: 0 5%;
+    padding: 0 max(5%, 1rem);
     max-height: 70vh;
     overflow-y: scroll;
 }
@@ -219,7 +232,25 @@
     }
 
     .greet {
-        margin: 50px 0;
+        margin: 0 0;
         padding-left: 22px;
+    }
+
+    .main .greet {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+}
+
+@media (max-width: 1000px) {
+    .sidebar {
+        position: fixed;
+        display: none;
+    }
+}
+
+@media (min-width: 800px) {
+    .greet {
+        margin-bottom: 25px;
     }
 }
