@@ -101,6 +101,6 @@ We welcome contributions to enhance the Gemini Clone project. To contribute:
 
 ---
 
-Feel free to contact me at [ranitmanik.dev@gmail.com](mailto:ranitmanik.dev@gmail.com) for any queries or further
-information about the project.
+<p align=center>Feel free to contact me at <a href="mailto:ranitmanik.dev@gmail.com">ranitmanik.dev@gmail.com</a> for any queries or further
+information about the project.</p>
 
