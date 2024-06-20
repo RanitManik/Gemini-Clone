@@ -98,9 +98,3 @@ We welcome contributions to enhance the Gemini Clone project. To contribute:
    ```
 
 5. Create a pull request to the main repository, detailing the changes and enhancements you have made.
-
----
-
-<p align=center>Feel free to contact me at <a href="mailto:ranitmanik.dev@gmail.com">ranitmanik.dev@gmail.com</a> for any queries or further
-information about the project.</p>
-
