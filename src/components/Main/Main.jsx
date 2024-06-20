@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import './Main.css';
 import {assets} from "../../assets/assets.js";
 import {Context} from "../../context/Context.jsx";
@@ -6,6 +6,21 @@ import {Context} from "../../context/Context.jsx";
 const Main = () => {
     const {onSent, recentPrompt, showResult, loading, resultData, setInput, input} = useContext(Context);
     const resultRef = useRef(null);
+    const [rows, setRows] = useState(1);
+
+    useEffect(() => {
+        const updateRows = () => {
+            if (window.innerWidth <= 600) {
+                setRows(2);
+            } else {
+                setRows(1);
+            }
+        };
+
+        updateRows();
+        window.addEventListener('resize', updateRows);
+        return () => window.removeEventListener('resize', updateRows);
+    }, []);
 
     useEffect(() => {
         if (resultRef.current) {
@@ -14,11 +29,11 @@ const Main = () => {
     }, [resultData]);
 
     return (
-        <div className="main">
-            <div className="nav">
+        <main className="main">
+            <nav className="nav">
                 <p>Gemini</p>
                 <img src={assets.user_icon} alt=""/>
-            </div>
+            </nav>
             <div className="main-container">
 
                 {!showResult
@@ -56,7 +71,7 @@ const Main = () => {
                             <p>{recentPrompt}</p>
                         </div>
                         <div className="result-data">
-                            <img src={assets.gemini_icon} alt=""/>
+                            <img className="result-data-icon" src={assets.gemini_icon} alt=""/>
                             {loading ?
                                 <div className='loader'>
                                     <hr/>
@@ -71,15 +86,15 @@ const Main = () => {
                 }
                 <div className="main-bottom">
                     <div className="search-box">
-                        <textarea rows="1" onChange={(e) => setInput(e.target.value)}
-                               onKeyUp={(e) => {
-                                   if (e.key === 'Enter') {
-                                       onSent();
-                                   }
-                               }}
-                               value={input}
-                               type="text"
-                               placeholder="Enter a prompt here"
+                        <textarea rows={rows} onChange={(e) => setInput(e.target.value)}
+                                  onKeyUp={(e) => {
+                                      if (e.key === 'Enter') {
+                                          onSent();
+                                      }
+                                  }}
+                                  value={input}
+                                  type="text"
+                                  placeholder="Enter a prompt here"
                         />
                         <div className="icon-container">
                             <button><img src={assets.gallery_icon} alt=""/></button>
@@ -93,7 +108,7 @@ const Main = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </main>
     );
 }
 

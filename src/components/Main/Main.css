@@ -1,17 +1,8 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 body {
     overflow: hidden;
 }
 
 .main {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
     flex: 1;
     max-height: 100svh;
     position: relative;
@@ -19,14 +10,8 @@ body {
 }
 
 .main .nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
     font-size: 22px;
     padding: 20px;
@@ -38,14 +23,12 @@ body {
     border-radius: 50%;
 }
 
-
 .main-container {
     max-width: 900px;
     margin: auto;
 }
 
 .main .greet {
-    /*margin: 50px 0;*/
     font-size: 56px;
     color: #c4c7c5;
     font-weight: 500;
@@ -104,24 +87,16 @@ body {
 
 .main-bottom {
     position: fixed;
-    width: min(900px, 100%);
     bottom: 0;
     padding: 10px 20px 0 20px;
     margin: auto;
     background-color: white;
-    -webkit-box-shadow: #ffffff 0 -20px 50px;
     box-shadow: #ffffff 0 -20px 50px;
 }
 
 .search-box {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
     gap: 20px;
     background-color: #f0f4f9;
@@ -135,8 +110,6 @@ body {
 }
 
 .search-box textarea {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
     flex: 1;
     background: transparent;
     border: none;
@@ -152,11 +125,7 @@ body {
 }
 
 .search-box div {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     gap: 10px;
 }
@@ -200,11 +169,7 @@ body {
 
 .result-title {
     margin: 40px 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     gap: 20px;
 }
@@ -219,23 +184,14 @@ body {
 }
 
 .result-data {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: start;
     gap: 20px;
 }
 
 .loader {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     gap: 10px;
 }
@@ -243,23 +199,10 @@ body {
 .loader hr {
     border-radius: 4px;
     border: none;
-    background: #f6f7f8 -webkit-gradient(linear, left top, right top, from(#9ed7ff), color-stop(#ffffff), to(#9ed7ff));
-    background: #f6f7f8 -o-linear-gradient(left, #9ed7ff, #ffffff, #9ed7ff);
     background: #f6f7f8 linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
     background-size: 800px 50px;
     height: 20px;
-    -webkit-animation: loader 3s infinite linear;
     animation: loader 3s infinite linear;
-}
-
-
-@-webkit-keyframes loader {
-    0% {
-        background-position: -800px 0;
-    }
-    100% {
-        background-position: 800px 0;
-    }
 }
 
 
@@ -272,23 +215,17 @@ body {
     }
 }
 
-.result-data p {
+.result-data > p {
     font-size: 17px;
     font-weight: 300;
     line-height: 1.8;
     margin-bottom: 10vh;
 }
 
-
-@media (max-width: 600px) {
-
+/* for tablets and less sized screens only */
+@media (max-width: 800px) {
     .search-box {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
         flex-direction: column;
-        -webkit-box-align: start;
-        -ms-flex-align: start;
         align-items: start;
         border-radius: 15px;
         padding: 10px 20px;
@@ -318,17 +255,32 @@ body {
         font-size: 2.5rem;
         line-height: 1.1;
     }
-}
 
-@media (max-width: 1000px) {
-    .sidebar {
-        position: fixed;
-        display: none;
+    .main {
+        margin-left: 80px;
     }
 }
 
+/* for laptops and bigger sized screens only */
 @media (min-width: 800px) {
     .greet {
         margin-bottom: 25px;
+    }
+
+    .main-bottom {
+        max-width: 900px;
+        width: -webkit-fill-available;
+    }
+}
+
+/* for mobiles only */
+@media (max-width: 450px) {
+    .main .greet {
+        font-size: 2.15rem;
+        line-height: 1.1;
+    }
+
+    .result-data-icon {
+        display: none;
     }
 }

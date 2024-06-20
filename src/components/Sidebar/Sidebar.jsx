@@ -12,7 +12,7 @@ const Sidebar = () => {
         await onSent(prompt)
     }
     return (
-        <div className={`sidebar ${extended ? 'extended' : 'collapsed'}`}>
+        <aside className={`sidebar ${extended ? 'extended' : 'collapsed'}`}>
             <div className={`top  ${extended ? '' : 'centered'}`}>
                 <div className="menu" onClick={() => setExtended(prev => !prev)}>
                     <img src={assets.menu_icon} alt="Menu Icon"/>
@@ -28,7 +28,7 @@ const Sidebar = () => {
                             return (
                                 <div onClick={() => loadPrompt(item)} className="recent-entry">
                                     <img src={assets.message_icon} alt=""/>
-                                    <p>{item.slice(0, 18)} ...</p>
+                                    <p className="recent-entry-p">{item.slice(0, 18)} ...</p>
                                 </div>
                             )
                         })}
@@ -51,7 +51,7 @@ const Sidebar = () => {
                     <p className={`fade ${extended ? 'block' : 'none'}`}>Settings</p>
                 </div>
             </div>
-        </div>
+        </aside>
     );
 }
 
