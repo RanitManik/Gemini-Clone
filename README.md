@@ -98,3 +98,7 @@ We welcome contributions to enhance the Gemini Clone project. To contribute:
    ```
 
 5. Create a pull request to the main repository, detailing the changes and enhancements you have made.
+
+---
+
+<p align="center">Thank you for exploring the <strong>Google Gemini Clone</strong>! Happy coding! 🚀</p>
