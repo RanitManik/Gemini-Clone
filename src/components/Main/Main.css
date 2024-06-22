@@ -259,10 +259,6 @@ body {
     .main {
         margin-left: 80px;
     }
-
-    .result-data > p {
-        margin-bottom: 30vh;
-    }
 }
 
 /* for laptops and bigger sized screens only */
@@ -286,5 +282,9 @@ body {
 
     .result-data-icon {
         display: none;
+    }
+
+    .result-data > p {
+        margin-bottom: 30vh;
     }
 }
