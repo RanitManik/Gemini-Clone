@@ -1,7 +1,6 @@
 # Gemini Clone
 
-Gemini Clone is a React-based project designed to replicate the functionality of Google Gemini AI chatbot, leveraging
-the Google Gemini API for enhanced conversational interactions.
+Gemini Clone is a React-based project designed to replicate the functionality of the Google Gemini AI chatbot, leveraging the Google Gemini API for enhanced conversational interactions.
 
 ## Table of Contents
 
@@ -13,19 +12,18 @@ the Google Gemini API for enhanced conversational interactions.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgment](#acknowledgment)
 
 ## Introduction
 
-Gemini Clone is a web application built using React that emulates the Google Gemini AI chatbot. The application offers a
-user-friendly interface to interact with the Gemini model, enabling users to ask questions and receive informative,
-conversational responses.
+Gemini Clone is a web application built using React that emulates the Google Gemini AI chatbot. The application offers a user-friendly interface to interact with the Gemini model, enabling users to ask questions and receive informative, conversational responses.
 
 ## Features
 
 ### Core Features
 
-- **Interactive Chat Interface:** A sleek and responsive chat interface to facilitate seamless interaction with the
-  Gemini model.
+- **Interactive Chat Interface:** A sleek and responsive chat interface to facilitate seamless interaction with the Gemini model.
 - **Simulated Typing Effect:** Mimics natural typing to enhance the conversational experience.
 - **Google Gemini API Integration:** Leverages the Google Gemini API to generate accurate and informative responses.
 
@@ -37,10 +35,8 @@ conversational responses.
 ### Potential Enhancements
 
 - **Conversation History:** Logs previous interactions for easy reference and continuity in conversations.
-- **Rich UI Elements:** Adds advanced UI elements such as emojis, text formatting options, and user avatars to enrich
-  the chat experience.
-- **Extended Functionality:** Plans to incorporate features like image search, language translation, and more to enhance
-  the chatbot’s capabilities.
+- **Rich UI Elements:** Adds advanced UI elements such as emojis, text formatting options, and user avatars to enrich the chat experience.
+- **Extended Functionality:** Plans to incorporate features like image search, language translation, and more to enhance the chatbot’s capabilities.
 
 ## Installation
 
@@ -76,8 +72,7 @@ conversational responses.
 
 ## Usage
 
-After installation, open your browser and navigate to `http://localhost:5173/` to access the Gemini Clone application.
-You can start interacting with the Gemini model through the chat interface provided.
+After installation, open your browser and navigate to `http://localhost:5173/` to access the Gemini Clone application. You can start interacting with the Gemini model through the chat interface provided.
 
 ## Contributing
 
@@ -98,6 +93,14 @@ We welcome contributions to enhance the Gemini Clone project. To contribute:
    ```
 
 5. Create a pull request to the main repository, detailing the changes and enhancements you have made.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgment
+
+Special thanks to **[GreatStack](https://www.youtube.com/@GreatStackDev)** for his tutorial **[Let's Build Google Gemini 2.0 Using React JS and Gemini API | Gemini Clone In React 2024](https://youtu.be/0yboGn8errU?feature=shared)** that served as a valuable reference for this project. 
 
 ---
 
