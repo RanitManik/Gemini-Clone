@@ -102,7 +102,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 Special thanks to **[GreatStack](https://www.youtube.com/@GreatStackDev)** for his [Gemini Clone tutorial](https://youtu.be/0yboGn8errU?feature=shared) that served as a valuable reference for this project.
 
-It's also essential to acknowledge **Google** for providing their free Gemini APIs, which greatly contributed to the success of this project. Their support has been invaluable.
+It's also essential to acknowledge **Google** for providing their free Gemini APIs and **vercel** for providing their free-of-cost hosting plans, which greatly contributed to the success of this project. Their support has been invaluable.
 
 Lastly, I want to thank the open source community for all their support.
 
