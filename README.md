@@ -1,3 +1,7 @@
+<div align="center">
+
+<img src="https://github.com/user-attachments/assets/fe0d6fcd-8f52-4bac-adce-d3351fbb0af7" alt="google-gemini-icon" height="70">
+
 # Gemini Clone
 
 ![GitHub Created At](https://img.shields.io/github/created-at/RanitManik/Gemini-Clone)
@@ -9,6 +13,8 @@
 <br/>
 ![Vercel Deploy status](https://deploy-badge.vercel.app/vercel/Gemini-Clone)
 ![wakatime](https://wakatime.com/badge/github/RanitManik/Gemini-Clone.svg)
+
+</div>
 
 Gemini Clone is a React-based project designed to replicate the functionality of the Google Gemini AI chatbot, leveraging the Google Gemini API for enhanced conversational interactions.
 
