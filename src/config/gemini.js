@@ -1,21 +1,13 @@
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-console.log("API Key:", apiKey); // Check if it's correctly loaded
+console.log("ENV DEBUG:", import.meta.env); // Debugging all env variables
 
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY; // Fetch API Key
 
-/*
- * Install the Generative AI SDK
- *
- * $ npm install @google/generative-ai
- *
- * See the getting started guide for more information
- * https://ai.google.dev/gemini-api/docs/get-started/node
- */
-
-/*const {
-    GoogleGenerativeAI,
-    HarmCategory,
-    HarmBlockThreshold,
-} = require("@google/generative-ai");*/
+if (!apiKey || apiKey === "undefined") {
+    console.error("❌ API Key is missing! Check your .env file and restart the server.");
+    throw new Error("API Key is missing! Check your .env file and restart the server.");
+} else {
+    console.log("✅ Loaded API Key:", apiKey);
+}
 
 import {
     GoogleGenerativeAI,
@@ -23,9 +15,9 @@ import {
     HarmBlockThreshold,
 } from "@google/generative-ai";
 
-//const apiKey = process.env.GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
-console.log("hi")
+console.log("hi");
+
 const model = genAI.getGenerativeModel({
     model: "gemini-1.5-pro-latest",
 });
@@ -39,34 +31,27 @@ const generationConfig = {
 };
 
 const safetySettings = [
-    {
-        category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-    },
-    {
-        category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-    },
-    {
-        category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-    },
-    {
-        category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-    },
+    { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+    { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+    { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+    { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
 ];
 
 async function run(prompt) {
-    const chatSession = model.startChat({
-        generationConfig,
-        safetySettings,
-        history: [],
-    });
+    try {
+        const chatSession = model.startChat({
+            generationConfig,
+            safetySettings,
+            history: [],
+        });
 
-    const result = await chatSession.sendMessage(prompt);
-    console.log(result.response.text());
-    return result.response.text();
+        const result = await chatSession.sendMessage(prompt);
+        console.log("AI Response:", result.response.text());
+        return result.response.text();
+    } catch (error) {
+        console.error("❌ Error sending message:", error);
+        return "Error generating response.";
+    }
 }
 
 export default run;
