@@ -1,4 +1,6 @@
-const apiKey = process.env.GEMINI_API_KEY;
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+console.log("API Key:", apiKey); // Check if it's correctly loaded
+
 
 /*
  * Install the Generative AI SDK
@@ -21,9 +23,9 @@ import {
     HarmBlockThreshold,
 } from "@google/generative-ai";
 
-// const apiKey = process.env.GEMINI_API_KEY;
+//const apiKey = process.env.GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
-
+console.log("hi")
 const model = genAI.getGenerativeModel({
     model: "gemini-1.5-pro-latest",
 });
